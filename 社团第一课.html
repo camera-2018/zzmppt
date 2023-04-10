@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>SRT第一课</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="/_assets/beamer.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/base16/zenburn.css" />
+    <link rel="stylesheet" href="https://static.staticsave.com/zhanggw/beamer.css">
+
+
+  </head>
+  <body>
+    <style>
+        html, body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 500;
+        }
+  
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            position: fixed; /* Set the navbar to fixed position */
+            top: 0; /* Position the navbar at the top of the page */
+            width: 100%; /* Full width */
+        }
+  
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+  
+        a {
+            color: #148bca;
+            text-align: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-decoration: none;
+        }
+      </style>
+        <a href="index.html"> ↑ Back to contents</a>
+    <div class="reveal">
+      <div class="slides"><section ><section data-markdown><script type="text/template">
+
+## 社团理念
+
+1. 不被传统的评价体系所定义，我是否有能力有且仅有自我认知来评价
+2. 不被功利性的时代潮流所裹挟，有自我清晰的定位与认知，清楚自己想要什么
+3. 保持好奇心和探索欲，不以悲壮的心态去学习
+4. 做一个人，而不是做一个机器。人懂得计算得失，也懂得关怀弱者，人可以随机应变但也会坚守道义。狡诈的是人，虔诚的是人，卑劣的是，崇高的是人，冷静的是人，浪漫的也是人。尝试兼容并蓄。
+
+</script></section><section data-markdown><script type="text/template">
+
+## 希望你获得的能力
+
+1. 编程能力，利用编程工具解决问题的能力
+2. 思辨能力，学会去判断对错，而不是一味顺从
+3. 阅读能力，敢于并且达到能够阅读英文论文和书籍的能力
+4. 表达能力，可以分享自己的观点，并且能够有逻辑的清晰的阐述观点
+5. 检索能力，在发现疑问后可以活用搜索引擎找到适合自己的资料
+6. 信仰，为自己人生以后的道路提供一个源动力
+
+</script></section><section data-markdown><script type="text/template">
+
+## 社团活动
+
+- 每周六会抽取时间举行会议，可能有固定的主题，也可以是大家交流本周学的东西
+- 大伙在跟我提出申请后可以来科技馆参观以及自习活动
+- 有机会的话可以邀请外校老师进行讲座
+- 任务大家可以把自己的思考和存留的问题发邮件给我，我们可以安排时间进行讨论
+- 干饭！ZZM带你吃遍下沙
+- 竞赛和科研项目，在各位获得一定能力后去审视他，当然，尽早我们也可以提供
+- 我会安排一些同学提前帮各位解决第二学期或大二大伙可能遇到的问题，针对大家的课程发力，让大家不那么痛苦
+
+</script></section><section data-markdown><script type="text/template">
+
+## 两条路线及第一个DDL
+
+稳扎稳打和猪突猛进，两个流派
+
+稳扎稳打即夯实基础再逐步推进（不是让你无限递归！），难度曲线比较平稳~
+
+猪突猛进即掌握最基本知识就去搞更高层次的内容，难度曲线可能会陡升！
+
+两者结合未尝不可？
+
+除阅读相关材料外，请尝试在9/24前完成C语言基础任务，跑通后将自己的思考、困扰你最久的bug以及代码截图发到我的邮箱，当然，有能力的同学可以高歌猛进！
+
+</script></section><section data-markdown><script type="text/template">
+
+## 学东西是线性的吗？
+
+我们的思维其实不是线性结构，而是网状的，我们去认知一个事物的时候，会给他诸多描述和限定条件，这些描述和条件就是我们的思考前驱图，有顺序关系。
+
+我们更好的学习方法是将新学的和我们已有的知识体系做结合，而不是靠死看书，死看网课，死记硬背。
+
+这样子隔天你可能就忘记了！
+
+对了，别忘了多睡觉，不然会变笨！
+
+</script></section><section data-markdown><script type="text/template">
+
+## 一些可以关注可以尝试的资料
+
+你是否被学校的高数线代困扰？宋浩会试着救你的，3blue1brown的线代和微积分内容会成为你前进的基石
+
+计算机科学导论看计算机速成课！
+
+编程看什么？mooc除了翁凯多半不可信，但这也仅仅只能帮你们入门！
+
+看书是个好办法，cpp,python入门等等，体系完善，但是太慢了！
+
+B站很不错，但是看培训机构的也太细了太啰嗦了，也许可以试试任务驱动学习？走出舒适区！你会有别样的收获！
+
+不知道AI部分怎么玩？王木头将帮助你的理论知识，李沐带你读论文，刘二大人的pytorch课程可以走pyhon编程路线
+
+
+
+</script></section><section data-markdown><script type="text/template">
+
+## 高效，很重要的一课
+
+更高效的工具兴许有一点学习成本，但是可以帮助你在以后的很多时间都非常舒适~
+
+能用linux就不用windows
+
+能用VS就不用dev C++
+
+能写个脚本解决就不用自己去干
+
+这就是几千块网课所谓自动办公的精髓
+
+</script></section><section data-markdown><script type="text/template">
+
+## 讲义导读
+
+学习课堂内容怎么搞？
+
+学校那么多杂七杂八的东西怎么看？
+
+怎么不被骗？被骗了之后咋整？？？
+
+该相信学校辅导员和班助吗？？？
+
+带你们看看讲义！</script></section></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        controls: true,
+        slideNumber: true,
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"slide","center":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

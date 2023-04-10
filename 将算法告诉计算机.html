@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>编程语言</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="/_assets/beamer.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/base16/zenburn.css" />
+    <link rel="stylesheet" href="https://static.staticsave.com/zhanggw/beamer.css">
+
+
+  </head>
+  <body>
+    <style>
+        html, body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 500;
+        }
+  
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            position: fixed; /* Set the navbar to fixed position */
+            top: 0; /* Position the navbar at the top of the page */
+            width: 100%; /* Full width */
+        }
+  
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+  
+        a {
+            color: #148bca;
+            text-align: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-decoration: none;
+        }
+      </style>
+        <a href="index.html"> ↑ Back to contents</a>
+    <div class="reveal">
+      <div class="slides"><section ><section data-markdown><script type="text/template">
+
+# <slide class="center middle"/> 0.前言
+
+</script></section><section data-markdown><script type="text/template">
+
+## 前情提要
+
+我们在前面的内容里，大概学习了工科/CSer的思维模式，学习了数据结构和算法的基本构成方法
+
+那下一步，我们该何去何从？
+
+我们考虑算法问题以及解决其的方案是很好的，但是我们也应该知道，这些算法应该与计算机联系起来！
+
+在继续讨论计算机科学内容前让我们进行这个有趣的联系！
+
+> Come, let us go down,and there confound their language, that they may not understand one another's speech
+>   	-----GENESIS 11: 7
+
+</script></section><section data-markdown><script type="text/template">
+
+## 怎么把算法塞进电脑
+
+我们设计的算法可能精妙绝伦，可是总不能让我们人脑去算吧！怎么把算法告诉计算机呢？
+
+首先我们的很自然的观察是我们的算法必须以明确和正式的方式编写!
+
+我们应该如何确定化转账这个过程！
+
+其次我们需要使用编程语言（更偏向于一种折中方案）但原始的计算机好像并不理解任何一种编程语言！正是抽象的表现机制让我们可以优雅的表达算法
+
+</script></section><section data-markdown><script type="text/template">
+
+
+
+## 计算机如何从二进制中获得
+
+40年代的编程，在部门管线的纸袋上打孔！hardwired program！
+
+用纸带来表述二进制代码，显然非常不容易修改
+
+1. 计算机提供基本的hardwired“原子操作”
+2. 提供编码方式，支持程序员组合“原子操作”，编写“程序”
+3. 将“程序”存放在存储空间中
+4. 计算机“解读”程序编码，执行原子操作
+
+```
+0010001000000100
+
+0010010000000100
+
+0000000000000000
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+## 举个例子
+
+0010: 操作码,将”某个”内存中的数据复制到”某个”寄存器中
+
+001: 001号寄存器，第一个操作数
+
+000000100：地址偏移量，4
+
+第二个操作数：从下一条指令所存储的地址向后偏移4个16位，取值5
+
+执行效果：将5赋值给1号寄存器
+
+不灵活！书写、阅读困难！！！
+
+</script></section></section><section ><section data-markdown><script type="text/template">
+
+## 汇编语言
+
+若用符号表示跳转位置和变量位置，是否简化了问题？
+
+于是，汇编语言出现了去解决这个问题
+
+- 用助记符表示操作码
+- 用标号表示位置
+- 用助记符表示寄存器
+
+```
+0101 0110       add B
+0010 0100 		jxx L0
+0110 0111 		sub C
+
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+## 高级程序设计语言
+
+我们将编程语言抽象为两大类：数据抽象和控制抽象
+
+数据抽象：帮助我们简化数据本身的行为和属性
+
+比如说：数字，字符串和树状结构
+
+控制抽象简化了控制方式的属性，即根据数据的情况修改程序的执行方式和路径。
+
+比如说循环，条件判断以及调用
+
+</script></section><section data-markdown><script type="text/template">
+
+</script></section></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        controls: true,
+        slideNumber: true,
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"slide","center":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

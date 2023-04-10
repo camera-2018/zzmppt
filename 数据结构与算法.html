@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>数据结构与算法</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="/_assets/beamer.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/base16/zenburn.css" />
+    <link rel="stylesheet" href="https://static.staticsave.com/zhanggw/beamer.css">
+
+
+  </head>
+  <body>
+    <style>
+        html, body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 500;
+        }
+  
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            position: fixed; /* Set the navbar to fixed position */
+            top: 0; /* Position the navbar at the top of the page */
+            width: 100%; /* Full width */
+        }
+  
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+  
+        a {
+            color: #148bca;
+            text-align: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-decoration: none;
+        }
+      </style>
+        <a href="index.html"> ↑ Back to contents</a>
+    <div class="reveal">
+      <div class="slides"><section ><section data-markdown><script type="text/template">
+
+# <slide class="center middle"/>1.算法描述
+
+</script></section><section data-markdown><script type="text/template">
+
+## 算法结构选讲
+
+在这一讲里面，我会讲一些更为通识性更具有普适性的内容。
+
+
+
+我不会重点讲任何一个算法，最重要的是提升大伙的软实力。
+
+
+
+即**方法论**，获得解决问题的钥匙。
+
+
+
+我希望各位在完成这部分内容后可以对算法的设计有一个更深的理解
+
+</script></section><section data-markdown><script type="text/template">
+
+## 吃一个蟹黄包，怎么吃？
+
+•顺序很重要：
+
+•将包子从蒸笼中轻轻提起，and then
+
+•将包子慢慢移动到面前的碟子中，and then
+
+•在包子的上方咬开一个小口，and then
+
+•通过小口吸食包子里的汤，and then
+
+•将包子送入口中
+
+完成！
+
+</script></section><section data-markdown><script type="text/template">
+
+## 顺序结构
+
+顺序，是组织算法的最基本方法！按照算法步骤书写指令！尝试理解下面这段话
+
+> My second remark is that our intellectual powers are rather geared to master static relations and that our powers to visualize **processes evolving in tim**e are relatively poorly developed. 
+>
+> For that reason we should do our utmost to shorten the conceptual gap between the static program and the dynamic process, to make the correspondence between the program (spread out in text space) and the process (spread out in time) as trivial as possible. ----E.W.Dijkstra
+
+大佬在说啥？ 
+
+</script></section><section data-markdown><script type="text/template">
+
+## 顺序产生最小的gap
+
+如果我们只一次性吃八只汤包呢？顺序
+
+如果我们吃饱为止呢？循环
+
+如果不知道吃汤包的人饱不饱呢？分支
+
+​    如果说顺序、分支和循环构成了算法组织的三个基本结构，那么顺序结构是算法组织的基本中的基本。
+
+</script></section><section data-markdown><script type="text/template">
+
+## Withtout Goto
+
+```c
+#include <stdio.h>
+int main(void){
+    int i, j, k;
+    for (i = 0; i < 10; i++)
+        for (j = 0; j < 10; j++){
+            for (k = 0; k < 10; k++)
+                if (i + j + k = 10) 
+                    break；
+	         printf("%d %d %d", i, j, k);
+	    } 
+}
+```
+
+顺序构建的代码结构非常好懂
+
+</script></section><section data-markdown><script type="text/template">
+
+## Goto
+
+```c
+#include <stdio.h>
+int main(void){  
+    int i, j, k;   
+    for (i = 0; i < 10; i++)     	     
+        for (j = 0; j < 10; j++){
+        for (k = 0; k < 10; k++)
+        
+            if (i + j + k = 10)  
+                goto exit_for;
+ 	    } 
+exit_for: 	    printf("%d %d %d", i, j, k);}
+
+```
+
+这啥？难以想象！
+
+文本空间和时间空间上存在巨大的gap！
+
+</script></section><section data-markdown><script type="text/template">
+
+## 控制结构的表达能力
+
+> Various minimal sets of control structures have been identified, meaning that in certain technical senses other control structures can be replaced by appropriate combinations of those in the minimal set, so that in practice these are the only ones needed.
+
+问题：
+
+什么情况下，我们会想到用过程来“封装”一段算法？这是一种自底向上的思维方式
+
+
+
+什么情况下，我们会想到将一个算法“分解”为若干个“子算法”的联合？这是一种自顶向下的思维方式
+
+
+
+两种思维方法的碰撞产生了“结构化程序设计”
+
+</script></section><section data-markdown><script type="text/template">
+
+## 新的算法组织方法：子程序
+
+过程的优点：
+
+- 复用
+- 封装
+- 抽象
+
+函数丰富了算法的基本结构：
+
+- 顺序、
+- 分支、循环
+- 调用
+
+思考：子程序这么一种算法(或者说程序)的构造和使用方式，其数学基础是什么？
+
+</script></section></section><section ><section data-markdown><script type="text/template">
+# <slide class="center middle"/>2.数据
+</script></section><section data-markdown><script type="text/template">
+
+## 数据与数据结构
+
+> Algorithms+Data Structures=Programs --Niklaus Wirth
+
+数据结构可理解为数据与逻辑之间的关系，是算法的设计基础
+
+算法可理解为解决特定问题的步骤和方法，其操作对象是数据结构
+
+思考问题：为什么需要数据结构？？？
+
+</script></section><section data-markdown><script type="text/template">
+
+## 变量不是量？
+
+我们该如何理解以下程序语句？
+
+Int x；
+
+x=x+1;
+
+从计算机的视角出发，这条语句“背后”我们能看到什么？
+
+变量是内存空间的**代号**便于对数据的操纵：取，存（改变）
+
+计算机操纵的对象（数据）“类别”在**表现形式**上可以统一
+
+> It is beneficial, however, to keep such types separate, not only for **clarity and good order**, but also because each type admits its **own special set of allowed operations or actions**
+
+</script></section><section data-markdown><script type="text/template">
+
+## 变量、数据、类型
+变量和数据的关系
+
+变量是用于跟踪、操纵几乎所有数据的简单（通用）工具
+
+数据是有“内存”地址的
+
+思考：变量名和地址是什么关系？
+
+变量和数据类型的关系
+变量定义了变量的变化范围
+类型定义了计算对变量的操作方式
+
+</script></section><section data-markdown><script type="text/template">
+
+
+## 数据结构
+
+多个数据组成的结构，就是这么简单！
+
+场景：“一队士兵”，每个士兵有了一个队伍中的唯一“位置”
+
+位置是相对的，如果设计一个按照位置进行的“游戏”，给定了位置就指定了人
+
+思考一个问题，所谓排序是改变位置和改变内容？
+
+</script></section><section data-markdown><script type="text/template">
+
+## 变量，向量与数组
+
+变量向量和数组在内存中的存储形式是什么样的？
+
+那我们去访问他们的时候是如何访问的呢
+
+```C
+int main(){
+int a[3][4]={{1,2,3,4},{5,6,7,8},{9,10,11,12}};
+printf("%d",a[2][3]);
+printf("%d",*((a[2])+3));
+printf("%d",*(*(a+2)+3));
+}
+```
+
+有区别吗？vector of vector 和数组的区别
+
+> Just as the loop is a **control structure** for describing lengthy processes, so is a vector a **data structure** for representing lengthy lists of data items
+
+</script></section><section data-markdown><script type="text/template">
+
+## 数据结构
+
+首先大伙可以思考一个问题
+
+从书架中取一本书和从套着的纸杯中取一个杯子有什么区别？
+
+非常核心的点在于使用是否受限制
+
+书架可以让你随意的存取，纸杯只能头尾去取
+
+
+更核心的点在于代价的高低，随意性需要牺牲更多的效率
+
+
+</script></section><section data-markdown><script type="text/template">
+
+## 队列和栈
+
+> it is **worthwhile**, at least for reasons of **algorithmic clarity**, **to think of queues and stacks as being in themselves data structures,** rather than being merely special kinds of lists. 
+
+仅仅就是先进先出和先进后出的区别吗？？？
+
+> We can then use **specially devised elementary instructions** such as “*add X to queue A*,” or “*push X on stack S*,” rather than obscure formulations that explicitly involve indices.
+
+树也是如此，一种可以用来表达更为复杂的层次关系的数据结构
+
+</script></section><section data-markdown><script type="text/template">
+
+## 结语
+
+> Once a person has understood **the way variables are used** in programming, he has understood the **quintessence** of programming.		-E. W. Dijkstra 1972
+
+数据、数据类型和变量分别表示什么？三者什么关系？
+
+什么是数据结构？数据类型和数据结构什么关系？
+
+为什么高级程序设计语言要提供“高级”数据结构？
+
+程序员能否自行定义“数据类型”？
+</script></section></section><section ><section data-markdown><script type="text/template">
+
+# <slide class="center middle"/>3.课后作业
+</script></section><section data-markdown><script type="text/template">
+
+## 作业
+
+1. 使用栈或者树状结构实现一个可以处理多个括号的计算器，可以使用任意编程语言
+
+	类似这样的结构：
+	
+	(10+((𝟐𝟐−𝟑×𝟒)÷(𝟐−𝟐×𝟐))×((𝟏𝟒−𝟐)÷(𝟏+𝟑))
+	
+	提示：查阅后缀表达式的表达形式
+	
+2. 自行研究树结构和递归存在的天然联系，并且考虑实现一个二叉搜索树，可以实现给定数据的排序功能。
+
+3. 思考题：指针与数组的关系， 多维数组和指针的关系
+</script></section></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        controls: true,
+        slideNumber: true,
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"slide","center":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

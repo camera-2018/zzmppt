@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Linux宣讲</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="/_assets/beamer.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/base16/zenburn.css" />
+    <link rel="stylesheet" href="https://static.staticsave.com/zhanggw/beamer.css">
+
+
+  </head>
+  <body>
+    <style>
+        html, body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 500;
+        }
+  
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            position: fixed; /* Set the navbar to fixed position */
+            top: 0; /* Position the navbar at the top of the page */
+            width: 100%; /* Full width */
+        }
+  
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+  
+        a {
+            color: #148bca;
+            text-align: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-decoration: none;
+        }
+      </style>
+        <a href="index.html"> ↑ Back to contents</a>
+    <div class="reveal">
+      <div class="slides"><section ><section data-markdown><script type="text/template">
+
+# <slide class="center middle"/>1.Linux基础
+
+</script></section><section data-markdown><script type="text/template">
+
+## 一个简单的自我介绍
+
+所有的讲义文档到最后都会分享。
+
+在讲解过程中的任何问题你可以随时打断我。
+
+同时zzm后期会推荐一些很cool的材料给你，have fun!!!
+
+（SRT社团的第一代创始人！！！）
+
+</script></section><section data-markdown><script type="text/template">
+
+## 目录结构
+
+1. linux发行版及其介绍
+
+2. 为甚么使用linux
+
+3. vim & simple text editor
+
+4. Shell编程
+
+5. htop,nvtop,etc··········
+
+
+</script></section><section data-markdown><script type="text/template">
+
+# <slide class="center middle"/>是时候实机演示了！
+
+</script></section></section><section ><section data-markdown><script type="text/template">
+
+# <slide class="center middle"/>ZZM的小补充
+</script></section><section data-markdown><script type="text/template">
+
+## 一些你可能需要具备的素养
+
+学习Bash的基础知识
+
+
+
+在命令行中输入 `man bash` 并至少全文浏览一遍; 它理解起来很简单并且不冗长。
+
+
+
+其他的 shell 可能很好用，但 Bash 的功能已经足够强大并且到几乎总是可用的
+
+
+
+（ 如果你*只*学习 zsh，fish 或其他的 shell 的话，在你自己的设备上会显得很方便，但过度依赖这些功能会给您带来不便，例如当你需要在服务器上工作时）。
+
+</script></section><section data-markdown><script type="text/template">
+
+## 一些你可能需要具备的素养
+
+学会如何使用 `man` 命令去阅读文档。
+
+学会使用 `apropos` 去查找文档。
+
+知道有些命令并不对应可执行文件，而是在 Bash 内置好的，此时可以使用 `help` 和 `help -d` 命令获取帮助信息。
+
+你可以用 `type 命令` 来判断这个命令到底是可执行文件、shell 内置命令还是别名。
+
+阅读手册的能力非常重要！！！
+
+RTFM！！！！
+
+</script></section><section data-markdown><script type="text/template">
+
+## 日常提高效率的小技巧
+
+在 Bash 中，可以按下 **ctrl-w** 删除你键入的最后一个单词
+
+**ctrl-u** 可以删除行内光标所在位置之前的内容
+
+**alt-b** 和 **alt-f** 可以以单词为单位移动光标，**ctrl-a** 可以将光标移至行首
+
+**ctrl-e** 可以将光标移至行尾
+
+ctrl-k** 可以删除光标至行尾的所有内容，**ctrl-l** 可以清屏。键入 `man readline` *
+
+*可以查看 Bash 中的默认快捷键。内容有很多。
+
+> 你所感到不爽的都有工具解决！
+
+</script></section></section><section ><section data-markdown><script type="text/template"> 
+# <slide class="center middle"/>更多有趣的资料
+
+# </script></section><section data-markdown><script type="text/template">
+
+## 资源推荐
+编程书籍
+
+`Advanced Programming in the UNIX Environment`
+
+`The Linux Programming Interface: A Linux and UNIX System Programming Handbook`
+
+技巧类
+
+The Art of Command Line.
+
+
+ Learn-Vim(the Smart Way) 中文翻译
+
+ > 一个人可以懂得不多，但是至少视野不能狭窄。并不是学好了现在要学的一门功课，考好了现在要考的考试就足够了的。
+
+ </script></section></section><section ><section data-markdown><script type="text/template">
+
+ # <slide class="center middle"/>大家最喜欢的作业环节
+
+ </script></section><section data-markdown><script type="text/template">
+
+ ## 一个使用shell制作的图书管理系统
+
+ 最少功能五个界面：
+
+ 目录，增加图书，删除图书，查询图书，修改图书。
+
+ 图书信息要包含编号，书名，作者和价格。
+
+ 维护书籍最少在10本以上
+
+ 可以自动从txt文件中读入书籍信息</script></section></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        controls: true,
+        slideNumber: true,
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"slide","center":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
